@@ -1,14 +1,17 @@
 package net.GladiusMC.GladiusLib;
 
-import net.GladiusMC.HubCore.HubCore;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class GladiusLib {
 
-    private final HubCore plugin;
+    private final JavaPlugin plugin;
 
-    public GladiusLib(HubCore plugin) {
+    public GladiusLib(JavaPlugin plugin) {
         this.plugin = plugin;
         plugin.getServer().getPluginCommand("example").setExecutor(new ExampleCommand());
     }
 
+    public JavaPlugin getPlugin() {
+        return plugin;
+    }
 }
